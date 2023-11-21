@@ -11,8 +11,8 @@ public class Solution {
 
 	public static void main(String[] args) {
 		Solution s = new Solution();
-//		s.solution1();
-		s.solution4();
+
+		s.solution4("aaaaa", "bbbbb");
 
 	}
 	
@@ -32,91 +32,44 @@ public class Solution {
 			return null;
 	    }
 	
-	// 경주 달리기
-	// 시간 초과
+	
     public String[] solution2() {
-        String[] answer = {};
+    	
+        Scanner sc = new Scanner(System.in);
+        String a = sc.next();
         
-        String[] players = {"mumu", "soe", "poe", "kai", "mine"};
-        String[] callings = {"kai", "kai", "mine", "mine"};
-
-        String temp = "";
-        for(int i=0; i<callings.length; i++){
-        	for(int j=0; j<players.length; j++) {
-        		if(callings[i].equals(players[j])) {
-        			temp = players[j-1];
-        	        players[j-1] = players[j];
-        			players[j]=temp;
-        		};
-        	}
-
+        for(int i=0; i<a.length(); i++){
+            System.out.println(a.charAt(i));
         }
-        System.out.println(Arrays.toString(players));
         
-        return answer;
+        return null;
     }
+    
+    public String solution3(String my_string, String overwrite_string, int s){
 
-    // 시간 초과
-    public String[] solution3() {
-        String[] answer = {};
-        
-        String[] players = {"mumu", "soe", "poe", "kai", "mine"};
-        String[] callings = {"kai", "kai", "mine", "mine"};
-        
-        Map<String, Integer> map = new HashMap<String, Integer>();
-        List<String> list = new ArrayList<>(Arrays.asList(players));
-        
-        for(int i=0; i<players.length; i++) {
-        	map.put(players[i], i);
-        	
-        }
-        System.out.println(map);
+    	String my_string2 = "";
+    	String text1 = my_string.substring(0, s);
+    	
+    	String text2 = my_string.substring(s+overwrite_string.length(), my_string.length());
+       
+    	my_string2 = text1 + overwrite_string + text2; 
+    	
+        return my_string2;
+    } 
+    
+    public String solution4(String str1, String str2){
 
-        for(int i=0; i<callings.length; i++){
-        	System.out.println(map);
-        	int index = map.get(callings[i]);
-            System.out.println(index);
-            list.remove(index);
-            list.add(index-1, callings[i]);
-            map.remove(callings[i]);
-            map.put(callings[i], index-1);
-            System.out.println(list);
+    	String answer = "";
+        
+        for(int i=0; i<str1.length()-1; i++){
+        	answer += str1.substring(i,i+1) + str2.substring(i, i+1);
+            
         }
-   
+        System.out.println(answer);
+    	
         return answer;
     }
     
-    // 시간 초과 => 향상된 for문으로 수정하니까 통과
-    public String[] solution4() {
-        
-        String[] players = {"mumu", "soe", "poe", "kai", "mine"};
-        String[] callings = {"kai", "kai", "mine", "mine"};
-        
-        Map<String, Integer> map = new HashMap<String, Integer>();
-        
-        for(int i=0; i<players.length; i++) {
-        	map.put(players[i], i);
-        	
-        }
-        System.out.println(map);
-
-        for(int i=0; i<callings.length; i++){
-        	int index = map.get(callings[i]);
-            System.out.println(index);
-            
-            String frontPlayer = players[index-1];
-            System.out.println(frontPlayer);
-            
-            map.replace(frontPlayer, index);
-            players[index] = frontPlayer;
-            
-            map.replace(callings[i], index-1);
-            players[index-1] = callings[i];
-
-        }
-
-        return players;
-    }
 
 
 }
