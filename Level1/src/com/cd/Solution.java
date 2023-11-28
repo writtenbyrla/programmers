@@ -10,12 +10,13 @@ public class Solution {
 
 	public static void main(String[] args) {
 		Solution s = new Solution();
-		String[] name = {"may", "kein", "kain", "radi"};
-		int[] yearning = {5, 10, 1, 3};
-		String[][] photo = {{"may", "kein", "kain", "radi"},{"may", "kein", "brin", "deny"}, {"kon", "kain", "may", "coni"}};
-		//s.solution4(name, yearning, photo);
-		s.solution5(10);
-		s.solution6(-4, 2);
+//		String[] name = {"may", "kein", "kain", "radi"};
+//		int[] yearning = {5, 10, 1, 3};
+//		String[][] photo = {{"may", "kein", "kain", "radi"},{"may", "kein", "brin", "deny"}, {"kon", "kain", "may", "coni"}};
+//		//s.solution4(name, yearning, photo);
+//		s.solution5(10);
+//		s.solution6(-4, 2);
+		s.solution7(12345);
 	}
 	
 	// 경주 달리기
@@ -161,5 +162,16 @@ public class Solution {
         return answer;
     }
 
-    
+    public int[] solution7(long n) {
+        String str = Long.toString(n);
+        System.out.println(str);
+
+
+        int[] answer = new int[str.length()];
+        
+        for(int i = str.length(); i>0; i--){
+        	answer[str.length()-i]= str.charAt(i-1)+'0';
+        }
+        return answer;
+    }
 }

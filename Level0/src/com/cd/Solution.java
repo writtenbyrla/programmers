@@ -12,7 +12,8 @@ public class Solution {
 	public static void main(String[] args) {
 		Solution s = new Solution();
 
-		s.solution4("aaaaa", "bbbbb");
+//		s.solution4("aaaaa", "bbbbb");
+
 
 	}
 	
@@ -69,7 +70,5 @@ public class Solution {
     	
         return answer;
     }
-    
-
 
 }
