@@ -13,7 +13,7 @@ public class Solution {
 		Solution s = new Solution();
 
 //		s.solution4("aaaaa", "bbbbb");
-
+		s.solution5(7, 3);
 
 	}
 	
@@ -71,4 +71,19 @@ public class Solution {
         return answer;
     }
 
+    public int solution5(int num1, int num2) {
+    	float f = (float)num1 / (float)num2 * 1000;
+    	System.out.println((int)f);
+        return (int)f;
+    }
+    
+    public int solution6(int n) {
+        int sum = 0;
+        for(int i=2; i<=n; i= i+2){
+            sum += i;
+        }
+        return sum;
+    }
+    
+    
 }
