@@ -13,8 +13,9 @@ public class Solution {
 		Solution s = new Solution();
 
 //		s.solution4("aaaaa", "bbbbb");
-		s.solution5(7, 3);
-
+//		s.solution5(7, 3);
+//		s.solution7(num_list);
+		
 	}
 	
 	// 대소문자 바꾸기
@@ -85,5 +86,27 @@ public class Solution {
         return sum;
     }
     
+    public int[] solution7(int[] num_list) {
+    	 int[] answer = new int[num_list.length];
+         
+         for(int i=0; i<num_list.length; i++){
+             answer[num_list.length-i-1] = num_list[i];
+         }
+         
+         
+         return answer;
+     
+    }
     
+    
+    public String solution8(String my_string) {
+        String answer = "";
+        
+        for(int i=0; i<my_string.length(); i++){
+            answer += my_string.charAt(my_string.length()-i-1);
+        }
+        
+        
+        return answer;
+    }
 }
