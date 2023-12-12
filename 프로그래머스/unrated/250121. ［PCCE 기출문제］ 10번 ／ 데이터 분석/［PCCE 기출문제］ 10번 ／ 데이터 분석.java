@@ -22,17 +22,10 @@ class Solution {
         for(int i=0; i<answer.length; i++){
             answer[i] = list.get(i);
         }
-
-        if(sort_by.equals("code")){
-            Arrays.sort(answer, Comparator.comparingInt(row -> row[0]));      
-        }else if(sort_by.equals("date")){
-            Arrays.sort(answer, Comparator.comparingInt(row -> row[1]));
-        }else if(sort_by.equals("maximum")){
-            Arrays.sort(answer, Comparator.comparingInt(row -> row[2]));
-        }else if(sort_by.equals("remain")){
-            Arrays.sort(answer, Comparator.comparingInt(row -> row[3]));
-        }
-
+        
+        int sortIndex = Arrays.asList(arr).indexOf(sort_by);
+        Arrays.sort(answer, Comparator.comparingInt(row -> row[sortIndex]));
+        
         return answer;
     }
 }
