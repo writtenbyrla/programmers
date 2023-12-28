@@ -15,6 +15,7 @@ public class Solution {
 //		s.solution4("aaaaa", "bbbbb");
 //		s.solution5(7, 3);
 //		s.solution7(num_list);
+
 		
 	}
 	
@@ -109,4 +110,5 @@ public class Solution {
         
         return answer;
     }
+
 }
