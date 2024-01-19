@@ -4,7 +4,6 @@ input = sys.stdin.readline
 n = int(input())
 budgets = list(map(int, input().split()))
 m = int(input())
-budgets.sort()
 
 # end를 상한선으로 잡음
 start, end = 0, max(budgets)
