@@ -7,5 +7,5 @@ def solution(n):
             answer += num
     else: 
         for num in range(2, n+1, 2):
-            answer += num*num
+            answer += num**2
     return answer
