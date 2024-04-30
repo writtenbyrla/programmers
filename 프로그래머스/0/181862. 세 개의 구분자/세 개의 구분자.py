@@ -4,6 +4,4 @@ def solution(myStr):
         if char in ['a', 'b', 'c']:
             myStr = myStr.replace(char, ' ')
     answer = myStr.split()
-    if not answer:
-        answer = ["EMPTY"]
-    return answer
+    return answer if answer else ["EMPTY"]
