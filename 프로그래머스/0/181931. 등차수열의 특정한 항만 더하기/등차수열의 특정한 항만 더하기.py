@@ -4,7 +4,6 @@ def solution(a, d, included):
     for i in range(len(included)):
         arr.append(a+(d*i))
     
-    for i in range(len(included)):
         if included[i]:
             answer += arr[i]
         
